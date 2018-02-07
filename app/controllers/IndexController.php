@@ -7,6 +7,6 @@ class IndexController extends Controller
 
     public function indexAction()
     {
-        echo '<h1>Привет!</h1>';
+        echo '<h1>Phalcon Application Example</h1>';
     }
 }

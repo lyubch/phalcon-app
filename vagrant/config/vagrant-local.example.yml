@@ -5,7 +5,7 @@ timezone: Europe/London
 box_check_update: false
 
 # Virtual machine name
-machine_name: phalcon
+machine_name: phalcon-app
 
 # Virtual machine IP
 ip: 192.168.83.101
@@ -18,5 +18,5 @@ memory: 2048
 
 # Domains
 domains: {
-    app: 'phalcon.loc'
+    app: 'phalcon-app.loc'
 }
