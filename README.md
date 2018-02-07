@@ -9,10 +9,10 @@ DIRECTORY STRUCTURE
 -------------------
 
 ```
-app
-    controllers/         contains Web controller classes
-public                   contains the entry script and Web resources
-vendor/                  contains dependent 3rd-party packages
+app                      contains application components
+    controllers          contains web controller classes
+public                   contains the entry script and web resources
+vendor                   contains dependent 3rd-party packages
 ```
 
 ## Installing using Vagrant
@@ -47,7 +47,8 @@ This way is the easiest but long (~20 min).
    ```
    
 That's all. You just need to wait for completion! After that you can access project locally by URLs:
-* app: http://phalcon-app.loc
+* Application URL: http://phalcon-app.loc
+* PhpMyAdmin URL: http://phalcon-app.loc/phpmyadmin
    
 #### Manual for Windows users
 
@@ -71,4 +72,5 @@ That's all. You just need to wait for completion! After that you can access proj
    (You can read [here](http://www.wikihow.com/Change-Directories-in-Command-Prompt) how to change directories in command prompt) 
 
 That's all. You just need to wait for completion! After that you can access project locally by URLs:
-* app: http://phalcon-app.loc
+* Application URL: http://phalcon-app.loc
+* PhpMyAdmin URL: http://phalcon-app.loc/phpmyadmin

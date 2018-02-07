@@ -63,5 +63,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell', path: './vagrant/provision/always-as-root.sh', run: 'always'
 
   # post-install message (vagrant console)
-  config.vm.post_up_message = "Application URL: http://#{domains['app']}"
+  config.vm.post_up_message = "Application URL: http://#{domains['app']}\nPhpMyAdmin URL: http://#{domains['app']}/phpmyadmin"
 end
