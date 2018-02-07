@@ -3,8 +3,7 @@ paths:
     seeds: '%%PHINX_CONFIG_DIR%%/db/seeds'
 
 environments:
-    default_migration_table: phinxlog
-    #phinx_migration
+    default_migration_table: phinx_log
     default_database: development
     production:
         adapter: mysql

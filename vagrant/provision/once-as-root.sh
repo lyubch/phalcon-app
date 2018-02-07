@@ -36,10 +36,9 @@ sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver mul
 echo "Done!"
 
 info "Add external repositories"
+add-apt-repository -y ppa:nijel/phpmyadmin
 apt-get install -y python-software-properties
 add-apt-repository -y ppa:ondrej/php
-
-info "Update OS software"
 apt-get update
 apt-get upgrade -y
 

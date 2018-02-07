@@ -11,7 +11,13 @@ DIRECTORY STRUCTURE
 ```
 app                      contains application components
     controllers          contains web controller classes
+db                       contains db related items
+    migrations           contains Phinx migrations
 public                   contains the entry script and web resources
+vagrant                  contains vagrant configs
+    apache2              contains apache2 configs
+    config               contains users configs
+    provision            contains provision scripts
 vendor                   contains dependent 3rd-party packages
 ```
 
