@@ -1,0 +1,37 @@
+{
+    "name": "lyubch/phalcon-app",
+    "description": "Phalcon Application Example",
+    "keywords": [
+        "phalcon",
+        "framework",
+        "example"
+    ],
+    "type": "project",
+    "license": "proprietary",
+    "homepage": "http://phalcon-app.lyubch.tk/",
+    "authors": [
+        {
+            "name": "Anton Lyubchenko",
+            "email": "anton.lyubch@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "codeception/codeception": "^2.2",
+        "codeception/verify": "~0.3",
+        "codeception/specify": "~0.4"
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    }
+}
