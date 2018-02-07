@@ -1,0 +1,36 @@
+paths:
+    migrations: '%%PHINX_CONFIG_DIR%%/db/migrations'
+    seeds: '%%PHINX_CONFIG_DIR%%/db/seeds'
+
+environments:
+    default_migration_table: phinxlog
+    #phinx_migration
+    default_database: development
+    production:
+        adapter: mysql
+        host: localhost
+        name: phalcon_app_production
+        user: root
+        pass: ''
+        port: 3306
+        charset: utf8
+
+    development:
+        adapter: mysql
+        host: localhost
+        name: phalcon_app_development
+        user: root
+        pass: ''
+        port: 3306
+        charset: utf8
+
+    testing:
+        adapter: mysql
+        host: localhost
+        name: phalcon_app_testing
+        user: root
+        pass: ''
+        port: 3306
+        charset: utf8
+
+version_order: creation
