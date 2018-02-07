@@ -16,6 +16,9 @@ info "Install project dependencies"
 cd /app
 composer --no-progress --prefer-dist install
 
+info "Apply migrations"
+vendor/bin/phinx migrate --no-interaction
+
 info "Create bash-alias 'app' for vagrant user"
 echo 'alias app="cd /app"' | tee /home/vagrant/.bash_aliases
 

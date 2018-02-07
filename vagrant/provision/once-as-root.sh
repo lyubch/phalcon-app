@@ -22,9 +22,17 @@ export DEBIAN_FRONTEND=noninteractive
 info "Configure timezone"
 timedatectl set-timezone ${timezone} --no-ask-password
 
-info "Prepare root password for MySQL"
+info "Prepare configuration for MySQL"
 debconf-set-selections <<< "mysql-community-server mysql-community-server/root-pass password \"''\""
 debconf-set-selections <<< "mysql-community-server mysql-community-server/re-root-pass password \"''\""
+echo "Done!"
+
+info "Prepare configuration for PhpMyAdmin"
+sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
+sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/app-password-confirm password \"''\""
+sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/admin-pass password \"''\""
+sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/app-pass password \"''\""
+sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2"
 echo "Done!"
 
 info "Add external repositories"
@@ -38,6 +46,7 @@ apt-get upgrade -y
 info "Install additional software"
 apt-get install -y apache2
 apt-get install -y mysql-server-5.7
+apt-get install -y phpmyadmin
 apt-get install -y php7.1 php7.1-cli php7.1-common php7.1-mysql php7.1-curl php7.1-gd libpcre3-dev php7.1-json php7.1-mbstring php7.1-dom php7.1-zip unzip php-phalcon
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -61,5 +70,7 @@ mysql -uroot <<< "FLUSH PRIVILEGES"
 echo "Done!"
 
 info "Initailize databases for MySQL"
-mysql -uroot <<< "CREATE DATABASE phalcon"
+mysql -uroot <<< "CREATE DATABASE phalcon_app_production"
+mysql -uroot <<< "CREATE DATABASE phalcon_app_development"
+mysql -uroot <<< "CREATE DATABASE phalcon_app_testing"
 echo "Done!"
